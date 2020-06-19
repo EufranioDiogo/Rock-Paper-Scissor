@@ -88,8 +88,8 @@ function play(userOption) {
             setTimeout(delay, 3000);
         }
         else {
-            robotPoints = Number.parseInt(localStorage.getItem('robotPoints'));
-            userPoints = Number.parseInt(localStorage.getItem('userPoints'));
+            let robotPoints = Number.parseInt(localStorage.getItem('robotPoints'));
+            let userPoints = Number.parseInt(localStorage.getItem('userPoints'));
 
             if (userOption == 0) {
                 if (robotOption == 1) {
@@ -102,7 +102,6 @@ function play(userOption) {
                     gameResponse.setAttribute('class', 'gameResponse win');
                     localStorage.setItem('userPoints', userPoints + 1);
                 }
-                setTimeout(delay, 3000);
             }
             else if (userOption == 1) {
                 if (robotOption == 0) {
@@ -115,7 +114,6 @@ function play(userOption) {
                     gameResponse.setAttribute('class', 'gameResponse lose');
                     localStorage.setItem('robotPoints', robotPoints + 1);
                 }
-                setTimeout(delay, 3000);
             }
             else {
                 if (robotOption == 0) {
@@ -128,8 +126,8 @@ function play(userOption) {
                     gameResponse.setAttribute('class', 'gameResponse win');
                     localStorage.setItem('userPoints', userPoints + 1);
                 }
-                setTimeout(delay, 3000);
             }
+            setTimeout(delay, 3000);
             scoreBoardRobot.innerText = localStorage.getItem('robotPoints');
             scoreBoardUser.innerText = localStorage.getItem('userPoints');
         }
