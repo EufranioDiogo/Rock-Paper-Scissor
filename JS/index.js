@@ -113,7 +113,7 @@ function play(userOption) {
                 else {
                     gameResponse.innerText = 'You Lose'.toUpperCase();
                     gameResponse.setAttribute('class', 'gameResponse lose');
-                    localStorage.setItem('robotPoints', userPoints + 1);
+                    localStorage.setItem('robotPoints', robotPoints + 1);
                 }
                 setTimeout(delay, 3000);
             }
