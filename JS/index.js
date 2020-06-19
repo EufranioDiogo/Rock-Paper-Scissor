@@ -1,33 +1,33 @@
 localStorage.setItem('userPoints', 0)
 localStorage.setItem('robotPoints', 0)
 
-var counter = 5;
-var userOption = 0;
-var enableToPlay = false;
+let counter = 5;
+let userOption = 0;
+let enableToPlay = false;
 
-var stonePath = '../IMG/spa.svg';
-var paperPath = '../IMG/portable-document-format.svg';
-var scissorPath = '../IMG/scissors.svg';
+let stonePath = 'IMG/spa.svg';
+let paperPath = 'IMG/portable-document-format.svg';
+let scissorPath = 'IMG/scissors.svg';
 
-var scoreBoardRobot = document.querySelector('#robotPoints p');
-var scoreBoardUser = document.querySelector('#userPoints p');
-
-var jogadaUser = document.createElement('img');
-jogadaUser.setAttribute('id', 'jogadaUser');
-jogadaUser.setAttribute('class', 'jogada');
-
-var jogadaRobot = document.createElement('img');
-jogadaRobot.setAttribute('id', 'jogadaRobot');
-jogadaRobot.setAttribute('class', 'jogada');
+let scoreBoardRobot = document.querySelector('#robotPoints p');
+let scoreBoardUser = document.querySelector('#userPoints p');
 
 scoreBoardUser.innerText = localStorage.getItem('userPoints');
 scoreBoardRobot.innerText = localStorage.getItem('robotPoints');
 
-var gameResponse = null;
+let jogadaUser = document.createElement('img');
+jogadaUser.setAttribute('id', 'jogadaUser');
+jogadaUser.setAttribute('class', 'jogada');
 
-var stone = document.querySelector('#user .stone');
-var paper = document.querySelector('#user .paper');
-var scissor = document.querySelector('#user .scissor');
+let jogadaRobot = document.createElement('img');
+jogadaRobot.setAttribute('id', 'jogadaRobot');
+jogadaRobot.setAttribute('class', 'jogada');
+
+let gameResponse = null;
+
+let stone = document.querySelector('#user .stone');
+let paper = document.querySelector('#user .paper');
+let scissor = document.querySelector('#user .scissor');
 
 
 function generateRobotChoose() {
@@ -55,17 +55,18 @@ function cronometro() {
 
             divCentral.appendChild(decreaserCounter)
             counter--;
-            divCentral.removeChild(divCentral.childNodes[0])
             setTimeout(cronometro, 1000);
-        } else {
             divCentral.removeChild(divCentral.childNodes[0])
+        } else {
+            if(divCentral.childNodes[0] != null){
+                divCentral.removeChild(divCentral.childNodes[0])
+            }
 
             gameResponse = document.createElement('p')
             gameResponse.setAttribute('class', 'gameResponse')
             divCentral.appendChild(gameResponse)
             divCentral.appendChild(jogadaUser)
             divCentral.appendChild(jogadaRobot)
-            counter = 5;
             enableToPlay = true;
         }
         document.getElementById('play').style.backgroundColor = '#00aeff7c';
@@ -86,43 +87,43 @@ function play(userOption) {
             gameResponse.setAttribute('class', 'gameResponse tie');
             setTimeout(delay, 3000);
         }
-        else{
+        else {
             robotPoints = Number.parseInt(localStorage.getItem('robotPoints'));
             userPoints = Number.parseInt(localStorage.getItem('userPoints'));
 
-            if (userOption == 0){
-                if (robotOption == 1){
+            if (userOption == 0) {
+                if (robotOption == 1) {
                     gameResponse.innerText = 'You Lose'.toUpperCase();
                     gameResponse.setAttribute('class', 'gameResponse lose');
                     localStorage.setItem('robotPoints', robotPoints + 1);
                 }
-                else{
+                else {
                     gameResponse.innerText = 'You Win'.toUpperCase();
                     gameResponse.setAttribute('class', 'gameResponse win');
                     localStorage.setItem('userPoints', userPoints + 1);
                 }
                 setTimeout(delay, 3000);
             }
-            else if (userOption == 1){
+            else if (userOption == 1) {
                 if (robotOption == 0) {
                     gameResponse.innerText = 'You Win'.toUpperCase();
                     gameResponse.setAttribute('class', 'gameResponse win');
                     localStorage.setItem('userPoints', userPoints + 1);
                 }
-                else{
+                else {
                     gameResponse.innerText = 'You Lose'.toUpperCase();
                     gameResponse.setAttribute('class', 'gameResponse lose');
                     localStorage.setItem('robotPoints', userPoints + 1);
                 }
                 setTimeout(delay, 3000);
             }
-            else{
-                if (robotOption == 0){
+            else {
+                if (robotOption == 0) {
                     gameResponse.innerText = 'You Lose'.toUpperCase();
                     gameResponse.setAttribute('class', 'gameResponse lose');
                     localStorage.setItem('robotPoints', robotPoints + 1);
                 }
-                else{
+                else {
                     gameResponse.innerText = 'You Win'.toUpperCase();
                     gameResponse.setAttribute('class', 'gameResponse win');
                     localStorage.setItem('userPoints', userPoints + 1);
@@ -133,52 +134,57 @@ function play(userOption) {
             scoreBoardUser.innerText = localStorage.getItem('userPoints');
         }
     }
-    else{
+    else {
         window.alert('You can\'t play! Please Press the Play Button')
     }
 }
 
-function delay(){
+function delay() {
     gameResponse.removeAttribute('class')
     gameResponse.setAttribute('class', 'gameResponse')
 }
 
-function displayChooseOfPlayers(userOption, robotOption){
-    if (userOption == 0){
+function displayChooseOfPlayers(userOption, robotOption) {
+    if (userOption == 0) {
         jogadaUser.style.backgroundImage = `url("${stonePath}")`
     }
-    else if(userOption == 1){
+    else if (userOption == 1) {
         jogadaUser.style.backgroundImage = `url("${paperPath}")`
     }
-    else{
+    else {
         jogadaUser.style.backgroundImage = `url("${scissorPath}")`
     }
 
-    if(robotOption == 0){
+    if (robotOption == 0) {
         jogadaRobot.style.backgroundImage = `url("${stonePath}")`
     }
-    else if(robotOption == 1) {
+    else if (robotOption == 1) {
         jogadaRobot.style.backgroundImage = `url("${paperPath}")`
     }
-    else{
+    else {
         jogadaRobot.style.backgroundImage = `url("${scissorPath}")`
     }
 }
 
-function restart(){
+function restart() {
     localStorage.setItem('robotPoints', 0);
     localStorage.setItem('userPoints', 0);
-    window.removeChild(gameResponse);
-    window.removeChild(jogadaUser);
-    window.removeChild(jogadaRobot);
     enableToPlay = false;
 
+    let divCentral = document.getElementById('mainPainelGame');
+    while (divCentral.childElementCount > 0) {
+        divCentral.removeChild(divCentral.firstChild)
+    }
+    counter = 5
+
+    jogadaRobot.style.backgroundImage = ''
+    jogadaUser.style.backgroundImage = ''
     scoreBoardRobot.innerText = localStorage.getItem('robotPoints');
     scoreBoardUser.innerText = localStorage.getItem('userPoints');
     document.getElementById('play').style.backgroundColor = '#00aeff';
 }
 
-function exit(){
+function exit() {
     close();
 }
 
