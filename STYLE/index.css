@@ -141,6 +141,11 @@ button#restart {
     color: #fff;
 }
 
+button#help{
+    background-color: #ff9900;
+    color: #fff;
+}
+
 button#exit {
     background-color: #ff0022;
     color: #fff;
@@ -295,10 +300,10 @@ button#exit {
         height: 7.5%;
     }
     #userPoints {
-        bottom: 4.5% !important;
+        bottom: 1.4% !important;
     }
     #robotPoints {
-        top: 4.0% !important;
+        top: 1.4% !important;
     }
     .optionsToPlay>img {
         right: 4.5%;
@@ -331,6 +336,11 @@ button#exit {
 }
 
 @media only screen and (max-width: 411px) {
+    #mainPainelGame{
+        border-radius: 0;
+        width: 100%;
+        top: 48.5%;
+    }
     #menu {
         flex-wrap: nowrap;
         width: 100%;
@@ -362,11 +372,17 @@ button#exit {
 }
 
 @media only screen and (max-width: 414px) {
+    #mainPainelGame {
+        width: 100%;
+        border-radius: 0;
+        top: 48.5%;
+    }
     .points {
         height: 100%;
+        left: 1.5%;
     }
     .points div {
-        height: 7.5%;
+        height: 7.0%;
     }
     #robotPoints {
         top: 0.5%;

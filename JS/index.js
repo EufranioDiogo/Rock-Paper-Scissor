@@ -58,7 +58,7 @@ function cronometro() {
             setTimeout(cronometro, 1000);
             divCentral.removeChild(divCentral.childNodes[0])
         } else {
-            if(divCentral.childNodes[0] != null){
+            if (divCentral.childNodes[0] != null) {
                 divCentral.removeChild(divCentral.childNodes[0])
             }
 
@@ -165,21 +165,12 @@ function displayChooseOfPlayers(userOption, robotOption) {
 }
 
 function restart() {
-    localStorage.setItem('robotPoints', 0);
-    localStorage.setItem('userPoints', 0);
-    enableToPlay = false;
+    window.location.reload();
+    window.location.reload();
+}
 
-    let divCentral = document.getElementById('mainPainelGame');
-    while (divCentral.childElementCount > 0) {
-        divCentral.removeChild(divCentral.firstChild)
-    }
-    counter = 5
-
-    jogadaRobot.style.backgroundImage = ''
-    jogadaUser.style.backgroundImage = ''
-    scoreBoardRobot.innerText = localStorage.getItem('robotPoints');
-    scoreBoardUser.innerText = localStorage.getItem('userPoints');
-    document.getElementById('play').style.backgroundColor = '#00aeff';
+function help() {
+    window.location.assign('HTML/help.html')
 }
 
 function exit() {
@@ -190,8 +181,9 @@ document.getElementById('play').addEventListener('click', cronometro);
 
 document.getElementById('restart').addEventListener('click', restart);
 
-document.getElementById('exit').addEventListener('click', exit);
+document.getElementById('help').addEventListener('click', help);
 
+document.getElementById('exit').addEventListener('click', exit);
 
 stone.addEventListener('click', () => {
     userOption = 0;
