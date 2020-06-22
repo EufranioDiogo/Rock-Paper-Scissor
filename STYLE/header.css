@@ -1,0 +1,36 @@
+@font-face{
+    font-family: "Game";
+    src: url('../FONTS/ARCADECLASSIC.TTF');
+}
+body{
+    background-color: #222;
+}
+
+* {
+    margin: 0;
+    padding: 8px;
+    font-family: "Game";
+    letter-spacing: 2px;
+}
+#goBack{
+    border: 0;
+    background-color: #fff;
+    margin: 0 0 10px 0;
+    width: 30px;
+}
+.header{
+    background-color: #f78e16;
+    padding: 0 !important;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+}
+.content{
+    background-color: #efefef;
+}
+h2{
+    color: #222222;
+}
+p{
+    color: #444444;
+}
