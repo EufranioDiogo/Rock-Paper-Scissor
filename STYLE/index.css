@@ -1,406 +1,56 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-@font-face {
-    font-family: 'Arcade';
+@font-face{
+    font-family: "Game";
     src: url('../FONTS/ARCADECLASSIC.TTF');
 }
-
-body {
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Game';
+}
+body{
     background-image: url('../IMG/mosaic-alien-on-wall-1670977.jpg');
     background-size: cover;
+    background-repeat: repeat;
 }
-
-#mainPainelGame {
-    position: absolute;
-    width: 400px;
-    height: 500px;
-    background-color: rgba(231, 231, 231, 0.74);
-    border-radius: 10px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#mainPainelGame #decreaserCounter {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 80px;
-    font-family: 'Arcade', Arial, Helvetica, sans-serif;
-    color: #fff;
-    background-color: #ff7b00;
-    border-radius: 5px;
-    border: 3px solid #000;
-    padding: 5px 20px;
-}
-
-.optionsToPlay {
-    position: absolute;
-    width: 400px;
-    height: 55px;
-    left: 50%;
-    transform: translateX(-50%);
+header{
+    padding: 50px;
     text-align: center;
 }
-
-.optionsToPlay div {
-    display: inline-block;
+header h1{
+    color: #ff5e00;
+    -webkit-text-stroke: 2px #fff;
+    font-size: 54px;
+}
+.menu{
     position: relative;
-    margin: 0 0 0 10px;
-    width: 50px;
-    height: 50px;
-    border-radius: 5px;
-    background-color: #fff;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    pointer-events: all;
-}
-
-.optionsToPlay div>img {
-    position: absolute;
-    width: 75%;
-    height: 75%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 5px;
-    background-color: #fff;
-}
-
-.optionsToPlay>img {
-    position: absolute;
-    right: 0;
-    width: 50px;
-    background-color: #00aeff;
-    border-radius: 50%;
-    border: 2px solid #fff;
-}
-
-.active {
-    display: block;
-}
-
-.desactive {
-    display: none;
-}
-
-#user div:active {
-    background-color: #aaa;
-}
-
-#user div:active img {
-    background-color: #aaa;
-}
-
-#user {
-    bottom: 0;
-}
-
-#menu {
+    width: 300px;
     display: flex;
-    align-items: baseline;
     flex-wrap: wrap;
-    width: 120px;
-    position: absolute;
-    right: 1%;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-#menu button {
-    width: 100%;
-    margin-top: 15px;
-    border: 0;
-    font-family: 'Arcade', Helvetica, Arial, sans-serif;
-    font-weight: 600;
-    font-size: 18px;
-    background-color: #555;
-    padding: 6px 0;
-    border-radius: 5px;
-    cursor: pointer;
-    letter-spacing: 2px;
-}
-
-button#play {
-    background-color: #00aeff;
-    color: #fff;
-}
-
-button#pause {
-    background-color: #ff7b00;
-    color: #fff;
-}
-
-button#restart {
-    background-color: #00ff4c;
-    color: #fff;
-}
-
-button#help{
-    background-color: #ff9900;
-    color: #fff;
-}
-
-button#exit {
-    background-color: #ff0022;
-    color: #fff;
-}
-
-.points {
-    position: absolute;
-    width: 80px;
-    height: 200px;
-    font-family: 'Arcade', Arial, Helvetica, sans-serif;
-    left: 5%;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.points div {
-    position: absolute;
-    background-color: #0c0c0cb7;
-    width: 100%;
-    height: 48%;
-    border-radius: 5px;
-}
-
-.points>div:nth-child(2) {
-    bottom: 0;
-}
-
-.points div p {
-    position: absolute;
-    color: white;
-    background-color: transparent;
-    font-size: 50px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.gameResponse {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 80%;
-    transform: translate(-50%, -50%);
-    font-family: 'Arcade', Arial, Helvetica, sans-serif;
-    letter-spacing: 2px;
-    font-size: 50px;
-    padding: 5px;
-    border-radius: 5px;
-    display: none;
-    text-align: center;
-}
-
-.win {
-    background-color: #00aeff;
-    color: #fff;
-    display: block;
-}
-
-.lose {
-    background-color: #ff1e00;
-    color: #fff;
-    display: block;
-}
-
-.tie {
-    background-color: #5eff00;
-    color: #fff;
-    display: block;
-}
-
-.jogada {
-    display: block;
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background-color: #f5f5f5;
-    background-size: cover;
+    align-items: center;
     left: 50%;
     transform: translateX(-50%);
-    margin: 10px 0 10px 0;
+}
+.menu .menuButtons{
+    padding: 20px 5px;
+    width: 100%;
+    border: 0;
+    font-size: x-large;
+    border: 2px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.5s;
     border-radius: 5px;
-    border: none;
 }
-
-#jogadaUser {
-    bottom: 0;
+.menu .menuButtons:hover{
+    opacity: 0.80;
 }
-
-@media only screen and (max-width: 320px) {
-    #mainPainelGame {
-        height: 70% !important;
-        width: 100% !important;
-        left: 56% !important;
-    }
-    #mainPainelGame img {
-        width: 90px !important;
-        height: 90px !important;
-    }
-    .points {
-        height: 100% !important;
-        width: 50px !important;
-        left: 2% !important;
-        top: 50% !important;
-        transform: translateY(-50%) !important;
-    }
-    .points div {
-        height: 5% !important;
-    }
-    #robotPoints {
-        top: 0.5% !important;
-    }
-    .points div>p {
-        font-size: 30px !important;
-    }
-    #menu {
-        flex-wrap: nowrap !important;
-        width: 100% !important;
-        height: 30px !important;
-        left: 57% !important;
-        top: 87% !important;
-        transform: translateX(-50%) !important;
-        justify-content: center !important;
-    }
-    #menu button {
-        width: 100px !important;
-        margin: 0 5px !important;
-    }
-    .optionsToPlay {
-        height: 50px !important;
-        width: 400px !important;
-    }
-    #user{
-        top: 100% !important;
-    }
-    .optionsToPlay div{
-        width: 60px !important;
-        height: 60px !important;
-    }
+#partidaRapida{
+    background-color: #00b7ff;
 }
-
-@media only screen and (max-width: 360px) {
-    #mainPainelGame {
-        border-radius: 0 !important;
-        height: 62% !important;
-        width: 100% !important;
-        top: 48% !important;
-    }
-    .points {
-        height: 100% !important;
-    }
-    .points div {
-        height: 7.5%;
-    }
-    #userPoints {
-        bottom: 1.4% !important;
-    }
-    #robotPoints {
-        top: 1.4% !important;
-    }
-    .optionsToPlay>img {
-        right: 4.5%;
-    }
-    .optionsToPlay div {
-        width: 50px !important;
-        height: 60px !important;
-    }
-    #menu {
-        top: 81% !important;
-    }
+#treino{
+    margin: 20px 0;
+    background-color: #ff5100;
 }
-
-@media only screen and (max-width: 375px) {
-    #mainPainelGame {
-        border-radius: 0;
-        width: 100%;
-        height: 68%;
-    }
-    #mainPainelGame>img {
-        width: 80px;
-        height: 80px;
-    }
-    .optionsToPlay {
-        width: 100%;
-    }
-    #menu {
-        top: 85.5%;
-    }
-}
-
-@media only screen and (max-width: 411px) {
-    #mainPainelGame{
-        border-radius: 0;
-        width: 100%;
-        top: 48.5%;
-    }
-    #menu {
-        flex-wrap: nowrap;
-        width: 100%;
-        height: 30px;
-        left: 50%;
-        top: 87%;
-        transform: translateX(-50%);
-        justify-content: center;
-    }
-    #menu button {
-        width: 100px;
-        margin: 0 5px;
-    }
-    .points {
-        height: 100%;
-        top: 0;
-        transform: translateY(0);
-        left: 1%;
-    }
-    .points div {
-        height: 7.2%;
-    }
-    #robotPoints {
-        top: 0.5%;
-    }
-    #userPoints {
-        bottom: 0.5%;
-    }
-}
-
-@media only screen and (max-width: 414px) {
-    #mainPainelGame {
-        width: 100%;
-        border-radius: 0;
-        top: 48.5%;
-    }
-    .points {
-        height: 100%;
-        left: 1.5%;
-    }
-    .points div {
-        height: 7.0%;
-    }
-    #robotPoints {
-        top: 0.5%;
-    }
-    #userPoints {
-        bottom: 0.5%;
-    }
-    #menu {
-        flex-wrap: nowrap;
-        width: 100%;
-        height: 30px;
-        left: 50%;
-        top: 84.5%;
-        transform: translateX(-50%);
-        justify-content: center;
-    }
-    #menu button {
-        width: 100px;
-        margin: 0 5px;
-    }
+#ajuda{
+    background-color: #01d336;
 }

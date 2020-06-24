@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .limiteJogadas{
+            position: absolute;
+            background-color: #1b1b1be8;
+            color: #fff;
+            width: 120px;
+            padding: 10px 0;
+            font-size: 18px;
+            left: 50%;
+            top: 8%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="../STYLE/treino.css">
+    <title>Pedra Papel Tesoura</title>
+</head>
+
+<body>
+    <div id="robot" class="optionsToPlay">
+        <div class="stone">
+            <img src="../IMG/spa.svg" alt="StoneItem">
+        </div>
+        <div class="paper">
+            <img src="../IMG/portable-document-format.svg" alt="PaperItem">
+        </div>
+        <div class="scissor">
+            <img src="../IMG/scissors.svg" alt="ScissorItem">
+        </div>
+        <img src="../IMG/robot.svg" class="imgPlayer" alt="">
+    </div>
+    <div class='limiteJogadas'>Limite: 10</div>
+    <div id="mainPainelGame">
+    </div>
+    <div id="user" class="optionsToPlay">
+        <div class="stone">
+            <img src="../IMG/spa.svg" alt="StoneItem">
+        </div>
+        <div class="paper">
+            <img src="../IMG/portable-document-format.svg" alt="PaperItem">
+        </div>
+        <div class="scissor">
+            <img src="../IMG/scissors.svg" alt="ScissorItem">
+        </div>
+        <img src="../IMG/people.svg" class="imgPlayer" alt="">
+    </div>
+    <div class="points">
+        <div id="robotPoints">
+            <p>0</p>
+        </div>
+        <div id="userPoints">
+            <p>0</p>
+        </div>
+    </div>
+    <div id="menu">
+        <button id="play">Jogar</button>
+    </div>
+    <!--
+        Stone
+        <div>Icons made by <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
+        Paper
+        <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
+        Scissor
+        <div>Icons made by <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    -->
+    <script src="../JS/partidaRapida.js"></script>
+</body>
+
+</html>

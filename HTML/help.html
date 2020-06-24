@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../STYLE/header.css">
-    <title>Help - Stone - Paper - Scissor</title>
+    <link rel="stylesheet" href="../STYLE/help.css">
+    <title>Ajuda - Pedra Papel Tesoura</title>
 </head>
 <body>
     <button id="goBack">&lt</button>
     <header class="header">
-        <h1>Stone Paper Scissor</h1>
+        <h1>Pedra Papel Tesoura</h1>
     </header>
     <section class="content">
-        <h2 id="what-is-this-game">What's this Game?</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident tempore ut distinctio, consectetur, quis perferendis nostrum esse repellendus pariatur quo dolorum? Ea ipsam eum tempore sequi magni, sed fugit cum?</p>
-        <h2>How Play?</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas autem exercitationem voluptas earum doloribus perspiciatis totam obcaecati nisi porro repellendus quibusdam molestias nostrum, maxime quo aspernatur. Dolorum saepe ullam sequi.</p>
-        <h2>Who Win and Lose?</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum officia voluptatem, incidunt consequuntur quibusdam veritatis accusantium quis ipsa, vitae facilis suscipit expedita minus molestiae distinctio labore praesentium aliquid ducimus ipsum.</p>
-        <h2>Why the tied result don't count?</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam velit cupiditate inventore libero optio corporis saepe labore sunt itaque perferendis? Sit minima ratione ad sint commodi aliquam illo animi doloremque.</p>
-
+        <h2 id="what-is-this-game">O que é este jogo?</h2>
+        <p>Este jogo é uma versão computarizada do famoso jogo pedra, papel e tesoura mas com uma abordagem diferente que é que você não joga com alguém e sim com um robô.</p>
+        <h2>Quem vence quem perde?</h2>
+        <p>As regras são simples, os dois jogadores jogarem a mesma coisa é um empate.<br>Quando um jogar jogada por exemplo pedra ele vence para tesoura porque a pedra esmaga a tesoura, perde para o papel porque o papel pode embrulhar o papel.<br>Quando um jogador jogada tesoura ele perde para a pedra porque a pedra esmaga a tesoura e vence para o papel porque a tesoura corta o papel.<br>Quando um jogador joga papel ele vence para a pedra porque a embrulha e perde para a tesoura porque é cortado por ela</p>
+        <h2>Como Jogar?</h2>
+        <p>Você tem um menu com 4 opções(jogar, reiniciar, ajuda, sair)<br>Para começar a jogar pressione o botão <stron>jogar</stron> e espere por 5 segundos para começar jogar.<br>A opção <strong>reiniciar</strong> ela está disponível apenas no modo treino e ela permite reiniciar os placares para 0.<br>A opção <strong>Ajuda</strong> é a opção onde pode obter ajudas de como o jogo funciona!<br>A opção <strong>Sair</strong> permite que o jogar abandone a partida!</p>
+        <h2>Por que o empate não conta?</h2>
+        <p>O empate não conta porque na realidade ninguém venceu e ninguém pode e deve levar os pontos para o seu placar</p>
     </section>
     <footer>
         <p>Did with &#128147 by Eufranio Diogo</p>
@@ -29,7 +28,7 @@
         let goBack = document.getElementById('goBack')
 
         goBack.addEventListener('click', () => {
-            window.location.assign('../index.html');
+            window.location.assign('index.html');
         });
     </script>
 </body>

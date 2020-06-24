@@ -1,0 +1,59 @@
+@font-face{
+    font-family: 'Game';
+    src: url('../FONTS/ARCADECLASSIC.TTF');
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Game', Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: #1a1a1a;
+    width: 100% !important;
+    height: 100% !important;
+}
+form{
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 250px;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+}
+form label{
+    color: white;
+    font-size: 25px;
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+form #limiteJogadas{
+    position: absolute;
+    padding: 10px 5px;
+    width: 50%;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-weight: 600;
+    left: 50%;
+    transform: translateX(-50%);
+}
+form #submitButton{
+    position: relative;
+    width: 35%;
+    padding: 10px 0;
+    background-color: #fff;
+    color: #1a1a1a;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}

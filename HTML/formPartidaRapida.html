@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../STYLE/formPartidaRapida.css">
+    <title>Partida Rápida</title>
+</head>
+<body>
+    <form action="partidaRapida.html" method="GET">
+        <label>Limite de Jogadas</label>
+        <input type="number" name="quantPartidas" id="limiteJogadas">
+        <button id="submitButton" type="submit">Jogar</button>
+    </form>
+    <script>
+        let caixaDeTexto = document.getElementById('limiteJogadas')
+        let submitButton = document.getElementById('submitButton')
+        submitButton.disabled = true;
+
+        caixaDeTexto.addEventListener('keypress', function(){
+            value = Number.parseInt(this.value)
+
+            if(value > 0 && value <= 100){
+                submitButton.style.border = '1px solid #05f86a'
+                submitButton.disabled = false;
+            } else{
+                submitButton.style.border = '1px solid #f80505'
+                submitButton.disabled = true;
+            }
+        })
+    </script>
+</body>
+</html>
