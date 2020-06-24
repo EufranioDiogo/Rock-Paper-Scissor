@@ -181,7 +181,7 @@ function displayChooseOfPlayers(userOption, robotOption) {
 
 
 function help() {
-    window.location.assign('help.html')
+    window.location.assign('Stone-Paper-Scissor/HTML/help.html')
 }
 
 document.getElementById('play').addEventListener('click', cronometro);
