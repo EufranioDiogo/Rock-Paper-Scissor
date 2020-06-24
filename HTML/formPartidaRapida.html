@@ -18,8 +18,9 @@
         submitButton.disabled = true;
 
         caixaDeTexto.addEventListener('keypress', function(){
-            value = Number.parseInt(this.value)
+            let value = Number.parseInt(this.value)
 
+            
             if(value > 0 && value <= 100){
                 submitButton.style.border = '1px solid #05f86a'
                 submitButton.disabled = false;
