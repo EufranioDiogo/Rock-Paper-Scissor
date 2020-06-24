@@ -141,9 +141,9 @@ function play(userOption) {
             userPoints = Number.parseInt(localStorage.getItem('userPoints'))
 
             if(robotPoints == limiteJogadas){
-                window.location.assign('robotWinner.html')
+                window.location.assign('Stone-Paper-Scissor/HTML/robotWinner.html')
             } else if(userPoints == limiteJogadas){
-                window.location.assign('userWinner.html')
+                window.location.assign('Stone-Paper-Scissor/HTML/userWinner.html')
             }
         }
     }
