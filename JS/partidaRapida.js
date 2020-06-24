@@ -141,9 +141,9 @@ function play(userOption) {
             userPoints = Number.parseInt(localStorage.getItem('userPoints'))
 
             if(robotPoints == limiteJogadas){
-                window.location.assign('Stone-Paper-Scissor/HTML/robotWinner.html')
+                window.location.assign('robotWinner.html')
             } else if(userPoints == limiteJogadas){
-                window.location.assign('Stone-Paper-Scissor/HTML/userWinner.html')
+                window.location.assign('userWinner.html')
             }
         }
     }
@@ -181,7 +181,7 @@ function displayChooseOfPlayers(userOption, robotOption) {
 
 
 function help() {
-    window.location.assign('Stone-Paper-Scissor/HTML/help.html')
+    window.location.assign('help.html')
 }
 
 document.getElementById('play').addEventListener('click', cronometro);
