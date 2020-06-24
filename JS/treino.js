@@ -174,7 +174,7 @@ function help() {
 }
 
 function exit() {
-    window.location.assign('../index.html')
+    window.location.assign('index.html')
 }
 
 document.getElementById('play').addEventListener('click', cronometro);
