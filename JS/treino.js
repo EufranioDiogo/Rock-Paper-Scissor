@@ -169,12 +169,8 @@ function restart() {
     window.location.reload();
 }
 
-function help() {
-    window.location.assign('help.html')
-}
-
 function exit() {
-    window.location.assign('index.html')
+    window.location.assign('../index.html')
 }
 
 document.getElementById('play').addEventListener('click', cronometro);
