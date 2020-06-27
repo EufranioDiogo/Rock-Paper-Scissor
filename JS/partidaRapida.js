@@ -141,9 +141,9 @@ function play(userOption) {
             userPoints = Number.parseInt(localStorage.getItem('userPoints'))
 
             if(robotPoints == limiteJogadas){
-                window.location.assign('robotWinner.html')
+                window.location.href = 'robotWinner.html?robotPoints=' + robotPoints + '&userPoints=' + userPoints;
             } else if(userPoints == limiteJogadas){
-                window.location.assign('userWinner.html')
+                window.location.href = 'userWinner.html?robotPoints=' + robotPoints + '&userPoints=' + userPoints;
             }
         }
     }

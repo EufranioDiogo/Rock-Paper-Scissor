@@ -1,0 +1,114 @@
+@font-face {
+    font-family: 'Game';
+    src: url('../FONTS/ARCADECLASSIC.TTF');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Game', Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+.scoreBoard{
+    position: relative;
+    width: 100%;
+    height: 20%;
+    background-color: #333333cb;
+    border-radius: 5px 5px 0 0;
+}
+.scoreBoard p{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    color: #fff;
+    font-size: 75px;
+    text-align: center;
+}
+.board {
+    position: absolute;
+    width: 350px;
+    height: 370px;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.players {
+    position: relative;
+    display: flex;
+    width: 80%;
+    height: 40px;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+}
+.players>span>p {
+    font-size: xx-large;
+    padding: 5px 0 0 0;
+}
+
+.players > img {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    margin: 0 20px;
+}
+
+#winner > span > p {
+    color: #00a2ff;
+}
+
+#winner > .playerImg{
+    border: 2px solid #00a2ff;
+}
+
+#winner {
+    border: 2px solid #ffe600;
+    box-shadow: 0 0 10px #ffe600;
+}
+
+#winnerLogo {
+    position: absolute;
+    border-radius: 0;
+    border: none;
+    right: 0.5%;
+}
+
+#loser>span>p {
+    color: #ff1100
+}
+
+#loser>img {
+    border: 2px solid #ff1100;
+}
+
+#loser {
+    border: 2px solid #ff1100;
+    box-shadow: 0 0 10px #ff1100;
+}
+#voltar{
+    position: absolute;
+    bottom: 2%;
+    padding: 15px;
+    left: 50%;
+    font-size: large;
+    transform: translateX(-50%);
+    border: none;
+    background-color: #fa4d4d;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#voltar:hover{
+    background-color: #fd3838;
+}

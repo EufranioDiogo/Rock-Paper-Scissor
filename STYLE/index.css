@@ -1,27 +1,32 @@
-@font-face{
+@font-face {
     font-family: "Game";
     src: url('../FONTS/ARCADECLASSIC.TTF');
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     font-family: 'Game';
 }
-body{
+
+body {
     background-image: url('../IMG/mosaic-alien-on-wall-1670977.jpg');
     background-size: cover;
     background-repeat: repeat;
 }
-header{
+
+header {
     padding: 50px;
     text-align: center;
 }
-header h1{
+
+header h1 {
     color: #ff5e00;
     -webkit-text-stroke: 2px #fff;
     font-size: 54px;
 }
-.menu{
+
+.menu {
     position: relative;
     width: 300px;
     display: flex;
@@ -30,7 +35,7 @@ header h1{
     left: 50%;
     transform: translateX(-50%);
 }
-.menu .menuButtons{
+.menu .menuButtons {
     padding: 20px 5px;
     width: 100%;
     border: 0;
@@ -41,16 +46,77 @@ header h1{
     transition: 0.5s;
     border-radius: 5px;
 }
-.menu .menuButtons:hover{
-    opacity: 0.80;
+
+@media only screen and (max-width: 320px) {
+    .menu {
+        position: relative;
+        width: 180px;
+        margin: 0 !important;
+    }
+    .menu .menuButtons {
+        padding: 20px 5px;
+        width: 100%;
+        border: 0;
+        font-size: large;
+        border: 2px solid #fff;
+        color: #fff;
+        cursor: pointer;
+        transition: 0.5s;
+        border-radius: 5px;
+    }
 }
-#partidaRapida{
+
+@media only screen and (max-width: 360px) {
+    .menu {
+        width: 200px !important;
+        left: 50%;
+        margin: 0 !important;
+    }
+    .menu .menuButtons {
+        font-size: large !important;
+    }
+}
+@media only screen and (max-width: 375px) {
+    .menu {
+        width: 200px !important;
+        margin: 0px 0 0 0 !important;
+    }
+    .menu .menuButtons {
+        font-size: large !important;
+    }
+}
+@media only screen and (max-width: 411px) {
+    .menu {
+        margin: 50px 0 0 0 !important;
+    }
+    .menu .menuButtons {
+        font-size: x-large;
+    }
+}
+@media only screen and (max-width: 414px) {
+    .menu {
+        width: 300px !important;
+        margin: 80px 0 0 0 !important;
+    }
+    .menu .menuButtons {
+        font-size: x-large !important;
+    }
+}
+
+
+#partidaRapida {
     background-color: #00b7ff;
 }
-#treino{
+
+#treino {
     margin: 20px 0;
     background-color: #ff5100;
 }
-#ajuda{
+
+#ajuda {
     background-color: #01d336;
+}
+
+.menu .menuButtons:hover {
+    opacity: 0.80;
 }

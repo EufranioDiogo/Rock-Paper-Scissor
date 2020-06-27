@@ -7,9 +7,9 @@
     <title>Partida Rápida</title>
 </head>
 <body>
-    <form action="partidaRapida.html" method="GET">
+    <form action="partidaRapida.html" method="GET" autocomplete="off">
         <label>Limite de Jogadas</label>
-        <input type="number" name="quantPartidas" id="limiteJogadas">
+        <input type="text" name="quantPartidas" id="limiteJogadas">
         <button id="submitButton" type="submit">Jogar</button>
     </form>
     <script>
@@ -17,16 +17,23 @@
         let submitButton = document.getElementById('submitButton')
         submitButton.disabled = true;
 
-        caixaDeTexto.addEventListener('keypress', function(){
-            let value = Number.parseInt(this.value)
+        caixaDeTexto.addEventListener('input', function(){
+            let value = this.value
 
-            
-            if(value > 0 && value <= 100){
-                submitButton.style.border = '1px solid #05f86a'
-                submitButton.disabled = false;
-            } else{
-                submitButton.style.border = '1px solid #f80505'
-                submitButton.disabled = true;
+            if(value != false){
+                if(! isNaN(value) && value > 0 && value < 31){
+                    submitButton.style.border = '2px solid #05f86a'
+                    submitButton.style.boxShadow = '0 0 5px #05f86a'
+                    submitButton.disabled = false;
+                } else {
+                    submitButton.style.border = '1px solid #f80505'
+                    submitButton.style.boxShadow = '0 0 5px #f80505'
+                    submitButton.disabled = true;
+                }
+            } else {
+                submitButton.style.border = 'none'
+                    submitButton.style.boxShadow = 'none'
+                    submitButton.disabled = false;
             }
         })
     </script>

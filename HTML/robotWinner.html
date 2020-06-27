@@ -1,11 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../STYLE/finalScore.css">
+    <style>
+            #userScore{
+                right: 0;
+                border-left: 2px solid #fff;
+            }
+            /*https://www.youtube.com/watch?v=MevoYr4fsu0*/
+    </style>
+    <title>Robô Vencedor - Pedra Papel Tesoura</title>
 </head>
+
 <body>
-    
+    <div class="board">
+        <section class="scoreBoard">
+            <p id="robotScore">1</p>
+            <p id="userScore">1</p>
+        </section>
+        <div id="winner" class="players">
+            <img id="winnerLogo" src="../IMG/trophy.svg" alt="">
+            <span>
+                <p>1º</p>
+            </span>
+            <img class="playerImg" src="../IMG/robot.svg" alt="">
+            <span>
+                <p>Robo</p>
+            </span>
+        </div>
+        <div id="loser" class="players">
+            <span>
+                <p>2º</p>
+            </span>
+            <img class="playerImg" src="../IMG/people.svg" alt="">
+            <span>
+                <p>User</p>
+            </span>
+        </div>
+        <button id="voltar">Voltar</button>
+    </div>
+    <script>
+        window.onload = () => {
+            let url = window.location.toString()
+            url = url.split('?')[1].split('&')
+            document.getElementById('robotScore').textContent = url[0].split('=')[1]
+
+            document.getElementById('userScore').textContent = url[1].split('=')[1]
+        }
+        document.getElementById('voltar').addEventListener('click', (event) => location.assign('../index.html'))
+    </script>
 </body>
+
 </html>
+
+<!---->
