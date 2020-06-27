@@ -177,8 +177,6 @@ document.getElementById('play').addEventListener('click', cronometro);
 
 document.getElementById('restart').addEventListener('click', restart);
 
-document.getElementById('help').addEventListener('click', help);
-
 document.getElementById('exit').addEventListener('click', exit);
 
 stone.addEventListener('click', () => {
