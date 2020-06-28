@@ -11,7 +11,7 @@
 
 body {
     background-image: url('../IMG/mosaic-alien-on-wall-1670977.jpg');
-    background-size: cover;
+    background-size: contain;
     background-repeat: repeat;
 }
 
