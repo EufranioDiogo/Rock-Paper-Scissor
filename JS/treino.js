@@ -5,9 +5,9 @@ let counter = 5;
 let userOption = 0;
 let enableToPlay = false;
 
-let stonePath = 'IMG/spa.svg';
-let paperPath = 'IMG/portable-document-format.svg';
-let scissorPath = 'IMG/scissors.svg';
+let stonePath = '../IMG/spa.svg';
+let paperPath = '../IMG/portable-document-format.svg';
+let scissorPath = '../IMG/scissors.svg';
 
 let scoreBoardRobot = document.querySelector('#robotPoints p');
 let scoreBoardUser = document.querySelector('#userPoints p');
