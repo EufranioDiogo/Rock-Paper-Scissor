@@ -238,8 +238,9 @@ button#exit {
 @media only screen and (max-width: 320px) {
     #mainPainelGame {
         height: 70% !important;
-        width: 100%;
+        width: 360px !important;
         left: 56% !important;
+        margin-top: 20px;
     }
     #mainPainelGame img {
         width: 90px !important;

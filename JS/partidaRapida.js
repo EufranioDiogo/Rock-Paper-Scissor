@@ -6,10 +6,8 @@ let limiteJogadas = Number.parseInt(url.slice(url.indexOf('=') + 1, url.length))
 
 document.getElementsByClassName('limiteJogadas')[0].innerText = 'Limite: ' + limiteJogadas
 
-
-let counter = 5;
 let userOption = 0;
-let enableToPlay = false;
+let enableToPlay = true;
 
 let stonePath = '../IMG/spa.svg';
 let paperPath = '../IMG/portable-document-format.svg';
@@ -45,110 +43,78 @@ function generateRobotChoose() {
     return numberGenerated
 }
 
-function cronometro() {
-    if (enableToPlay == false) {
-        var divCentral = document.getElementById('mainPainelGame');
-        var decreaserCounter = document.createElement('p');
+function prepareEnviorment() {
+    let divCentral = document.querySelector('#mainPainelGame')
 
-        if (counter >= 0) {
-            decreaserCounter.setAttribute('id', 'decreaserCounter');
-            decreaserCounter.setAttribute('class', 'desactive')
-
-            decreaserCounter.innerText = counter.toString();
-
-            decreaserCounter.removeAttribute('class')
-            decreaserCounter.setAttribute('class', 'active')
-
-            divCentral.appendChild(decreaserCounter)
-            counter--;
-            setTimeout(cronometro, 1000);
-            divCentral.removeChild(divCentral.childNodes[0])
-        } else {
-            if (divCentral.childNodes[0] != null) {
-                divCentral.removeChild(divCentral.childNodes[0])
-            }
-
-            gameResponse = document.createElement('p')
-            gameResponse.setAttribute('class', 'gameResponse')
-            divCentral.appendChild(gameResponse)
-            divCentral.appendChild(jogadaUser)
-            divCentral.appendChild(jogadaRobot)
-            enableToPlay = true;
-        }
-        document.getElementById('play').style.backgroundColor = '#00aeff7c';
-    } else {
-        window.alert('Você já está jogando, escolha uma das opção! Se quiser recomeçar clique em reiniciar.')
-    }
+    gameResponse = document.createElement('p')
+    gameResponse.setAttribute('class', 'gameResponse')
+    divCentral.appendChild(gameResponse)
+    divCentral.appendChild(jogadaUser)
+    divCentral.appendChild(jogadaRobot)
 }
 
 function play(userOption) {
-    if (enableToPlay == true) {
-        robotOption = generateRobotChoose();
-        gameResponse.removeAttribute('class');
+    robotOption = generateRobotChoose();
+    gameResponse.removeAttribute('class');
 
-        displayChooseOfPlayers(userOption, robotOption);
+    displayChooseOfPlayers(userOption, robotOption);
 
-        if (userOption == robotOption) {
-            gameResponse.innerText = 'Empatou'.toUpperCase();
-            gameResponse.setAttribute('class', 'gameResponse tie');
-            setTimeout(delay, 3000);
-        }
-        else {
-            let robotPoints = Number.parseInt(localStorage.getItem('robotPoints'));
-            let userPoints = Number.parseInt(localStorage.getItem('userPoints'));
+    if (userOption == robotOption) {
+        gameResponse.innerText = 'Empatou'.toUpperCase();
+        gameResponse.setAttribute('class', 'gameResponse tie');
+        setTimeout(delay, 3000);
+    } else {
+        let robotPoints = Number.parseInt(localStorage.getItem('robotPoints'));
+        let userPoints = Number.parseInt(localStorage.getItem('userPoints'));
 
-            if (userOption == 0) {
-                if (robotOption == 1) {
-                    gameResponse.innerText = 'Perdeu'.toUpperCase();
-                    gameResponse.setAttribute('class', 'gameResponse lose');
-                    localStorage.setItem('robotPoints', robotPoints + 1);
-                }
-                else {
-                    gameResponse.innerText = 'Venceu'.toUpperCase();
-                    gameResponse.setAttribute('class', 'gameResponse win');
-                    localStorage.setItem('userPoints', userPoints + 1);
-                }
-            }
-            else if (userOption == 1) {
-                if (robotOption == 0) {
-                    gameResponse.innerText = 'Venceu'.toUpperCase();
-                    gameResponse.setAttribute('class', 'gameResponse win');
-                    localStorage.setItem('userPoints', userPoints + 1);
-                }
-                else {
-                    gameResponse.innerText = 'Perdeu'.toUpperCase();
-                    gameResponse.setAttribute('class', 'gameResponse lose');
-                    localStorage.setItem('robotPoints', robotPoints + 1);
-                }
+        if (userOption == 0) {
+            if (robotOption == 1) {
+                gameResponse.innerText = 'Perdeu'.toUpperCase();
+                gameResponse.setAttribute('class', 'gameResponse lose');
+                localStorage.setItem('robotPoints', robotPoints + 1);
             }
             else {
-                if (robotOption == 0) {
-                    gameResponse.innerText = 'Perdeu'.toUpperCase();
-                    gameResponse.setAttribute('class', 'gameResponse lose');
-                    localStorage.setItem('robotPoints', robotPoints + 1);
-                }
-                else {
-                    gameResponse.innerText = 'Venceu'.toUpperCase();
-                    gameResponse.setAttribute('class', 'gameResponse win');
-                    localStorage.setItem('userPoints', userPoints + 1);
-                }
-            }
-            setTimeout(delay, 3000);
-            scoreBoardRobot.innerText = localStorage.getItem('robotPoints');
-            scoreBoardUser.innerText = localStorage.getItem('userPoints');
-
-            robotPoints = Number.parseInt(localStorage.getItem('robotPoints'))
-            userPoints = Number.parseInt(localStorage.getItem('userPoints'))
-
-            if(robotPoints == limiteJogadas){
-                window.location.href = 'robotWinner.html?robotPoints=' + robotPoints + '&userPoints=' + userPoints;
-            } else if(userPoints == limiteJogadas){
-                window.location.href = 'userWinner.html?robotPoints=' + robotPoints + '&userPoints=' + userPoints;
+                gameResponse.innerText = 'Venceu'.toUpperCase();
+                gameResponse.setAttribute('class', 'gameResponse win');
+                localStorage.setItem('userPoints', userPoints + 1);
             }
         }
-    }
-    else {
-        window.alert('Clique no botão jogar para começar a jogar!')
+        else if (userOption == 1) {
+            if (robotOption == 0) {
+                gameResponse.innerText = 'Venceu'.toUpperCase();
+                gameResponse.setAttribute('class', 'gameResponse win');
+                localStorage.setItem('userPoints', userPoints + 1);
+            }
+            else {
+                gameResponse.innerText = 'Perdeu'.toUpperCase();
+                gameResponse.setAttribute('class', 'gameResponse lose');
+                localStorage.setItem('robotPoints', robotPoints + 1);
+            }
+        }
+        else {
+            if (robotOption == 0) {
+                gameResponse.innerText = 'Perdeu'.toUpperCase();
+                gameResponse.setAttribute('class', 'gameResponse lose');
+                localStorage.setItem('robotPoints', robotPoints + 1);
+            }
+            else {
+                gameResponse.innerText = 'Venceu'.toUpperCase();
+                gameResponse.setAttribute('class', 'gameResponse win');
+                localStorage.setItem('userPoints', userPoints + 1);
+            }
+        }
+        setTimeout(delay, 3000);
+        scoreBoardRobot.innerText = localStorage.getItem('robotPoints');
+        scoreBoardUser.innerText = localStorage.getItem('userPoints');
+
+        robotPoints = Number.parseInt(localStorage.getItem('robotPoints'))
+        userPoints = Number.parseInt(localStorage.getItem('userPoints'))
+
+        if (robotPoints == limiteJogadas) {
+            window.location.href = 'robotWinner.html?robotPoints=' + robotPoints + '&userPoints=' + userPoints;
+        } else if (userPoints == limiteJogadas) {
+            window.location.href = 'userWinner.html?robotPoints=' + robotPoints + '&userPoints=' + userPoints;
+        }
     }
 }
 
@@ -184,8 +150,7 @@ function help() {
     window.location.assign('help.html')
 }
 
-document.getElementById('play').addEventListener('click', cronometro);
-
+prepareEnviorment()
 
 stone.addEventListener('click', () => {
     userOption = 0;
