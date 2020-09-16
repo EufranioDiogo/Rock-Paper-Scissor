@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../STYLE/formPartidaRapida.css">
     <title>Partida Rápida</title>
 </head>
+
 <body>
     <form action="partidaRapida.html" method="GET" autocomplete="off">
         <label>Limite de Pontos</label>
@@ -17,11 +19,11 @@
         let submitButton = document.getElementById('submitButton')
         submitButton.disabled = true;
 
-        caixaDeTexto.addEventListener('input', function(){
+        caixaDeTexto.addEventListener('input', function () {
             let value = this.value
 
-            if(value != false){
-                if(! isNaN(value) && value > 0 && value < 31){
+            if (value != false) {
+                if (!isNaN(value) && value > 0 && value < 31) {
                     submitButton.style.border = '2px solid #05f86a'
                     submitButton.style.boxShadow = '0 0 5px #05f86a'
                     submitButton.disabled = false;
@@ -32,10 +34,11 @@
                 }
             } else {
                 submitButton.style.border = 'none'
-                    submitButton.style.boxShadow = 'none'
-                    submitButton.disabled = false;
+                submitButton.style.boxShadow = 'none'
+                submitButton.disabled = false;
             }
         })
     </script>
 </body>
+
 </html>

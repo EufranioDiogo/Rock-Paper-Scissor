@@ -173,8 +173,6 @@ function exit() {
     window.location.assign('../index.html')
 }
 
-document.getElementById('play').addEventListener('click', cronometro);
-
 document.getElementById('restart').addEventListener('click', restart);
 
 document.getElementById('exit').addEventListener('click', exit);
@@ -191,3 +189,5 @@ scissor.addEventListener('click', () => {
     userOption = 2;
     play(userOption);
 });
+
+cronometro()
