@@ -13,8 +13,8 @@ let stonePath = '../IMG/spa.svg';
 let paperPath = '../IMG/portable-document-format.svg';
 let scissorPath = '../IMG/scissors.svg';
 
-let scoreBoardRobot = document.querySelector('#robotPoints p');
-let scoreBoardUser = document.querySelector('#userPoints p');
+let scoreBoardRobot = document.querySelector('#robotPoints');
+let scoreBoardUser = document.querySelector('#userPoints');
 
 scoreBoardUser.innerText = localStorage.getItem('userPoints');
 scoreBoardRobot.innerText = localStorage.getItem('robotPoints');
