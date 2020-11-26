@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Game";
-    src: url('../FONTS/ARCADECLASSIC.TTF');
+    src: url('../assets/FONTS/ARCADECLASSIC.TTF');
 }
 
 * {
@@ -11,7 +11,7 @@
 }
 
 body {
-    background-image: url('../IMG/mosaic-alien-on-wall-1670977.jpg');
+    background-image: url('../assets/IMG/mosaic-alien-on-wall-1670977.jpg');
     background-size: contain;
     background-repeat: repeat;
     height: 100vh;

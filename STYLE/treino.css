@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Arcade';
-    src: url('../FONTS/ARCADECLASSIC.TTF');
+    src: url('../assets/FONTS/ARCADECLASSIC.TTF');
 }
 
 * {
@@ -10,7 +10,7 @@
 }
 
 body {
-    background-image: url('../IMG/mosaic-alien-on-wall-1670977.jpg');
+    background-image: url('../assets/IMG/mosaic-alien-on-wall-1670977.jpg');
     background-size: cover;
     height: 100vh;
     display: flex;
