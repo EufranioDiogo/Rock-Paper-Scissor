@@ -8,40 +8,36 @@
     </a>
     <span> | </span>
     <a href="https://github.com/EufranioDiogo/Weather-App">
-      Solution
+      Solução
     </a>
   </h3>
 </div>
 
-<p>A game that I build simulating the game that I played when I was a kid, and never knew that one day I'll be doing this game at digital way! :cry: :smile: </p>
+<p>O jogo pedra papel tesoura foi o primeiro jogo que fiz usando as tecs webs HTML, CSS e JS, foi algo complicado de fazer no ínicio mas eu queria muito ter a sensão de nostalgia jogando o mesmo jogo que joguei muito quando era pequeno e nem sabia que um dia aprenderia a programar e quanto me dei conta que tinha esse poder de fazer isto, arregassei as mangas e fui para cima do desafio.</p>
+
+<a href="https://eufraniodiogo.github.io/Weather-App">Teste</a>
+
 
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
 - [Overview](#overview)
-  - [Built With](#built-with)
+  - [Contruido com:](#contruido-com)
 - [Contact](#contact)
 
 <!-- OVERVIEW -->
 
 ## Overview
 
-![screenshot1](IMG/MainScreen.png)
-![screenshot2](IMG/Win.png)
-![screenshot3](IMG/Normal.png)
-![screenshot4](IMG/Empate.png)
-
-- Where can I see your demo?<br>
+- Como posso experimentar?<br>
   [Here](https://eufraniodiogo.github.io/Rock-Paper-Scissor)
-- What was your experience?<br>
-  It was a very cool project to pratice and learn new stuff!
+- Qual foi a minha experiência?<br>
+  Foi um projecto muito bom e aprendi muita coisa nova.
 - What have you learned/improved?<br>
-  I learned more about working with apis and asynchronous functions in JavaScript.
+  Eu aprendi mais sobre I learned more about working with apis and asynchronous functions in JavaScript.
 
 
-### Built With
-
-<!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
+### Contruido com:
 
 - JS
 - HTML
