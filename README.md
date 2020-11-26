@@ -17,17 +17,9 @@
 
 <a href="https://eufraniodiogo.github.io/Weather-App">Teste</a>
 
-
-## Table of Contents
-
-- [Table of Contents](#table-of-contents)
-- [Overview](#overview)
-  - [Contruido com:](#contruido-com)
-- [Contact](#contact)
-
 <!-- OVERVIEW -->
 
-## Overview
+## Sobre
 
 - Como posso experimentar?<br>
   [Here](https://eufraniodiogo.github.io/Rock-Paper-Scissor)
